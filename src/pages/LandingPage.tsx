@@ -62,7 +62,7 @@ const LandingPage = () => {
     },
     {
       title: "Equity Shares",
-      description: "Direct investment opportunities in Elite Capital growth.",
+      description: "Direct investment opportunities in Elite Finance Hub growth.",
       return: "15-20% p.a."
     }
   ];
@@ -78,7 +78,7 @@ const LandingPage = () => {
     {
       name: "Sarah Johnson",
       role: "Small Business Owner",
-      content: "Elite Capital helped me expand my business with their quick approval process and excellent customer service.",
+      content: "Elite Finance Hub helped me expand my business with their quick approval process and excellent customer service.",
       rating: 5
     },
     {
@@ -168,7 +168,7 @@ const LandingPage = () => {
               ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
 >
   <div className="flex justify-between items-center mb-8">
-    <h1 className="text-xl font-bold text-white">Elite Capital</h1>
+    <h1 className="text-xl font-bold text-white">Elite Finance Hub</h1>
     <button onClick={() => setIsOpen(false)} className="p-2 text-white">
       <X size={24} />
     </button>
@@ -215,7 +215,7 @@ const LandingPage = () => {
         <div className='absolute inset-0 z-0'>
           <img
             src={heroImage}
-            alt='Elite Capital Fintech Solutions'
+            alt='Elite Finance Hub Fintech Solutions'
             className='w-full h-full object-cover'
           />
           <div className='absolute inset-0 gradient-hero opacity-80'></div>
@@ -260,7 +260,7 @@ const LandingPage = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-16 animate-fade-in'>
             <h2 className='text-3xl md:text-4xl font-bold text-foreground mb-6'>
-              About Elite Capital
+              About Elite Finance Hub
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
               Founded with a vision to democratize financial services, Elite
@@ -399,7 +399,7 @@ const LandingPage = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-16'>
             <h2 className='text-3xl md:text-4xl font-bold text-foreground mb-6'>
-              Why Choose Elite Capital?
+              Why Choose Elite Finance Hub?
             </h2>
           </div>
 
@@ -484,7 +484,7 @@ const LandingPage = () => {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
           <div className='grid md:grid-cols-4 gap-8'>
             <div className='col-span-2'>
-              <h3 className='text-2xl font-bold mb-4'>Elite Capital Ltd</h3>
+              <h3 className='text-2xl font-bold mb-4'>Elite Finance Hub Ltd</h3>
               <p className='text-primary-foreground/80 mb-6 leading-relaxed'>
                 Your trusted partner in financial growth and wealth creation.
                 Building a better financial future together.
@@ -554,7 +554,7 @@ const LandingPage = () => {
 
           <div className='border-t border-white/20 mt-12 pt-8 text-center'>
             <p className='text-primary-foreground/60'>
-              © 2024 Elite Capital Ltd. All rights reserved. Licensed Financial
+              © 2024 Elite Finance Hub Ltd. All rights reserved. Licensed Financial
               Services Provider.
             </p>
           </div>
