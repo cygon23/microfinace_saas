@@ -176,6 +176,13 @@ const LandingPage = () => {
 
   <nav className="flex flex-col space-y-4">
     <a
+      href="/"
+      className="text-gray-300 hover:text-primary transition-colors"
+      onClick={() => setIsOpen(false)}
+    >
+      Home
+    </a>
+    <a
       href="#services"
       className="text-gray-300 hover:text-primary transition-colors"
       onClick={() => setIsOpen(false)}
@@ -232,8 +239,7 @@ const LandingPage = () => {
             </h1>
             <p className='text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed'>
               Empowering your financial journey with innovative loan products
-              and investment opportunities. Join thousands who trust Elite
-              Capital for their financial growth.
+              and investment opportunities. Join thousands who trust Elite Finance Hub for their financial growth.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <Link to='/register'>
@@ -263,8 +269,7 @@ const LandingPage = () => {
               About Elite Finance Hub
             </h2>
             <p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-              Founded with a vision to democratize financial services, Elite
-              Capital Ltd has been at the forefront of fintech innovation,
+              Founded with a vision to democratize financial services, Elite Finance Hub Ltd has been at the forefront of fintech innovation,
               providing accessible loans and profitable investment
               opportunities.
             </p>
