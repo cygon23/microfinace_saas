@@ -19,18 +19,23 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-fintech.jpg";
+import { useState } from "react"
+
+
+import { Menu, X } from "lucide-react"
 
 const LandingPage = () => {
   const services = [
     {
       title: "Personal Loans",
       description: "Quick and easy personal loans with competitive rates for your immediate needs.",
-      features: ["Up to $50,000", "24-hour approval", "Flexible terms"]
+      features: ["Up to TZS 50,000", "24-hour approval", "Flexible terms"],
+      
     },
     {
       title: "Business Loans", 
       description: "Fuel your business growth with our tailored business financing solutions.",
-      features: ["Up to $500,000", "Business credit building", "Equipment financing"]
+      features: ["Up to TZS 500,000", "Business credit building", "Equipment financing"]
     },
     {
       title: "Emergency Loans",
@@ -84,42 +89,121 @@ const LandingPage = () => {
     }
   ];
 
+   const [isOpen, setIsOpen] = useState(false)
+
   return (
     <div className='min-h-screen bg-background'>
       {/* Navigation */}
-      <nav className='border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <div className='flex justify-between items-center h-16'>
-            <div className='flex items-center'>
-              <h1 className='text-2xl font-bold text-gradient'>EC Ltd</h1>
-            </div>
-            <div className='hidden md:flex items-center space-x-8'>
-              <a
-                href='#services'
-                className='text-foreground hover:text-primary transition-colors'>
-                Services
-              </a>
-              <a
-                href='#about'
-                className='text-foreground hover:text-primary transition-colors'>
-                About
-              </a>
-              <a
-                href='#contact'
-                className='text-foreground hover:text-primary transition-colors'>
-                Contact
-              </a>
-              <Link to='/login'>
-                <Button variant='outline'>Login</Button>
-              </Link>
-              <Link to='/register'>
-                <Button variant='hero'>Get Started</Button>
-              </Link>
-            </div>
+ <nav className="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <h1 className="text-2xl font-bold text-gradient">Elite Finance Hub</h1>
+            {/* <img className="" src="../../public/logo.jpeg" alt="d"  /> */}
+          </div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a
+              href="#services"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="#about"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="#contact"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Contact
+            </a>
+            <Link to="/login">
+              <Button variant="outline">Login</Button>
+            </Link>
+            <Link to="/register">
+              <Button variant="hero">Get Started</Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="p-2 text-foreground hover:text-primary"
+            >
+              <Menu size={24} />
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
 
+      {/* Mobile Sidebar */}
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/40 backdrop-blur-md z-40 transition-opacity duration-300 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setIsOpen(false)}
+      ></div>
+
+      {/* Sidebar */}
+<div
+  className={`fixed top-0 left-0 h-full w-64 
+               /* full black background */
+              border-r border-border/40 shadow-lg 
+              z-50 p-6 flex flex-col space-y-6 
+              transform transition-transform duration-300 
+              ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+>
+  <div className="flex justify-between items-center mb-8">
+    <h1 className="text-xl font-bold text-white">Elite Capital</h1>
+    <button onClick={() => setIsOpen(false)} className="p-2 text-white">
+      <X size={24} />
+    </button>
+  </div>
+
+  <nav className="flex flex-col space-y-4">
+    <a
+      href="#services"
+      className="text-gray-300 hover:text-primary transition-colors"
+      onClick={() => setIsOpen(false)}
+    >
+      Services
+    </a>
+    <a
+      href="#about"
+      className="text-gray-300 hover:text-primary transition-colors"
+      onClick={() => setIsOpen(false)}
+    >
+      About
+    </a>
+    <a
+      href="#contact"
+      className="text-gray-300 hover:text-primary transition-colors"
+      onClick={() => setIsOpen(false)}
+    >
+      Contact
+    </a>
+    <Link to="/login" onClick={() => setIsOpen(false)}>
+      <Button variant="outline" className="w-full">
+        Login
+      </Button>
+    </Link>
+    <Link to="/register" onClick={() => setIsOpen(false)}>
+      <Button variant="hero" className="w-full">
+        Get Started
+      </Button>
+    </Link>
+  </nav>
+  </div>
+    </nav>
+ 
       {/* Hero Section */}
       <section className='relative min-h-[90vh] flex items-center justify-center overflow-hidden'>
         <div className='absolute inset-0 z-0'>
